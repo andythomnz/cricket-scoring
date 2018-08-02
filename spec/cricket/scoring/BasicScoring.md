@@ -44,6 +44,6 @@ When I erase the last [2](- "eraseLastnEntries(#TEXT)") entries and enter '[34](
 Then the Score Card should show '[2..34](- "?=#result.card")' and the Total Runs Scored should show '[9](- "?=#result.score")'.
 
 ### [Example - Amending a mistake of a dot ball](- "amend-previous-dot")
-Given I entered '[.](- "#entry")' for the [first](- "startInnings(#entry)") ball of an innings.<br/>
+Given I entered '['.'](- "#entry")' for the [first](- "startInnings(#entry)") ball of an innings.<br/>
 When I [erase](- "eraseLastEntry()") the '.'.<br/>
 Then the Score Card should show '[0](- "?=#result.card")' and the Total Runs Scored should show '[0](- "?=#result.score")'.
