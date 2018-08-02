@@ -3,7 +3,7 @@
 As a Cricket Scorer, I want an application to help me add the scores so the score is always up to date.
 
 * I can enter the score for each ball.
-* I can view the score card for all balls to date. 
+* I can view the score card for all balls to date.
 * I can view the total runs scored to date.
 * I can amend mistakes to the score for the previous ball.
 
@@ -42,3 +42,8 @@ Then the Score Card should show '[3](- "?=#result.card")' and the Total Runs Sco
 Given I entered '[2..14](- "#entry")' at the [start](- "startInnings(#entry)") of an innings and I should have entered '2..34'<br/>
 When I erase the last [2](- "eraseLastnEntries(#TEXT)") entries and enter '[34](- "#result = enterScore(#TEXT)")'<br/>
 Then the Score Card should show '[2..34](- "?=#result.card")' and the Total Runs Scored should show '[9](- "?=#result.score")'.
+
+### [Example - Amending a mistake of a dot ball](- "amend-previous")
+Given I entered '[.](- "#entry")' for the [first](- "startInnings(#entry)") ball of an innings.<br/>
+When I [erase](- "eraseLastEntry()") the '.'.<br/>
+Then the Score Card should show '[0](- "?=#result.card")' and the Total Runs Scored should show '[0](- "?=#result.score")'.
